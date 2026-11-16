@@ -1,0 +1,24 @@
+@layer base {
+  .dragon-ball,
+  [data-theme="dragon-ball"] {
+    /* application globale de la règle */
+    font-family: var(--main-font);
+
+    /* Dragon Ball : clair = ciel/sable, sombre = nuit de l'arène */
+    --surface: light-dark(oklch(96% 0.02 85), oklch(14.5% 0.03 260));
+    --surface-muted: light-dark(oklch(98% 0.012 85), oklch(20.5% 0.04 260));
+
+    /* bleu nuit très sombre / crème clair */
+    --text: light-dark(oklch(18% 0.04 260), oklch(97% 0.015 90));
+
+    /* bleu ardoise / sable grisé */
+    --text-muted: light-dark(oklch(32% 0.05 255), oklch(75% 0.03 85));
+
+    /* ombre bleu nuit, plus profonde en sombre */
+    --shadow: light-dark(oklch(25% 0.06 260), oklch(8% 0.04 265));
+
+    --radius: 2rem;
+
+    --main-font: "Bangers", "Impact", sans-serif;
+  }
+}

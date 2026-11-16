@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "./themes/dragon-ball.css";
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+
+    --surface: light-dark(oklch(96% 0 none), oklch(14.5% 0 none));
+    --surface-muted: light-dark(oklch(98% 0 none), oklch(20.5% 0 none));
+
+    /* neutral-950 / neutral-100 */
+    --text: light-dark(oklch(14.5% 0 none), oklch(97% 0 none));
+
+    /* neutral-900 / neutral-400 */
+    --text-muted: light-dark(oklch(20.5% 0 none), oklch(70.8% 0 none));
+    --shadow: light-dark(oklch(14.5% 0 none), oklch(14.5% 0 none));
+
+    --radius: 1rem;
+
+    --main-font: "Inter", sans-serif;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+/* pas forcément nécessaire, là si on veut laisser l'intégrateur ajouter des classes dark à la main... */
+@custom-variant dark (&:where(.dark, .dark *, [data-theme=dark]));
+
+/* tokens du theme */
+@theme inline {
+  /* supprimer les tokens par défaut */
+  /* --*: initial; */
+
+  --color-*: initial;
+
+  /* Couleurs */
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-shadow: var(--shadow);
+
+  /* Typo */
+  --default-font-family: var(--main-font);
+  --text-md: 1rem;
+  --text-lg: 2rem;
+  --text-xl: 3rem;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-card: 20rem;
+
+  /* Forms (radius, shadow...) */
+  --radius-*: initial;
+  --radius-sm: calc(var(--radius) / 2);
+  --radius-lg: var(--radius);
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-sm: 0 1px 2px 0
+    color-mix(in oklab, var(--color-shadow) 30%, transparent);
+  --shadow-lg: 0 10px 15px -3px
+    color-mix(in oklab, var(--color-shadow) 30%, transparent);
+
+  /* Divers (transform, transition...) */
+}
+
+@layer components {
+  .card-btn {
+    @apply hover:bg-text-muted hover:text-surface-muted cursor-pointer rounded-full border border-current p-2 transition-colors duration-300;
+  }
+}
