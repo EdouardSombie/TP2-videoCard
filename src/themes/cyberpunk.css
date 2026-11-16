@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@layer base {
+  .cyberpunk,
+  [data-theme="cyberpunk"] {
+    /* Typo */
+    --main-font: "Orbitron", "Courier New", monospace;
+    --font-size: 16px;
+    --letter-spacing: 6%;
+
+    /* Couleurs */
+    --surface: light-dark(oklch(95% 0.03 300), oklch(13% 0.04 290));
+    --surface-muted: light-dark(oklch(98% 0.02 300), oklch(19% 0.06 295));
+    --text: light-dark(oklch(20% 0.08 290), oklch(92% 0.15 195));
+    --text-muted: light-dark(oklch(38% 0.12 320), oklch(72% 0.22 340));
+    --shadow: light-dark(oklch(55% 0.28 340), oklch(65% 0.3 330));
+
+    /* Formes */
+    --radius: var(--spacing);
+
+    /* Spacing */
+    --spacing: calc(0.25rem * var(--font-size) / 1rem);
+    --card-width: calc(90 * var(--spacing));
+
+    /* application locale de règles en principe globales, pas nécessaire si le thème est mis sur html ou body */
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing);
+  }
+}

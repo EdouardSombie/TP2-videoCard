@@ -1,26 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import "./themes/dragon-ball.css";
+@import "./themes/default.css";
+@import "./themes/dragonball.css";
+@import "./themes/cyberpunk.css";
+@import "./themes/minimalist.css";
+@import "./themes/dungeon-dragon.css";
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    color-scheme: light dark;
-
-    --surface: light-dark(oklch(96% 0 none), oklch(14.5% 0 none));
-    --surface-muted: light-dark(oklch(98% 0 none), oklch(20.5% 0 none));
-
-    /* neutral-950 / neutral-100 */
-    --text: light-dark(oklch(14.5% 0 none), oklch(97% 0 none));
-
-    /* neutral-900 / neutral-400 */
-    --text-muted: light-dark(oklch(20.5% 0 none), oklch(70.8% 0 none));
-    --shadow: light-dark(oklch(14.5% 0 none), oklch(14.5% 0 none));
-
-    --radius: 1rem;
-
-    --main-font: "Inter", sans-serif;
+  body {
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--font-size);
+    font-family: var(--main-font);
   }
-
   .dark {
     color-scheme: dark;
   }
@@ -28,11 +18,12 @@
 /* pas forcément nécessaire, là si on veut laisser l'intégrateur ajouter des classes dark à la main... */
 @custom-variant dark (&:where(.dark, .dark *, [data-theme=dark]));
 
-/* tokens du theme */
+/* tokens du theme vers tailwindcss (INTERFACE) */
 @theme inline {
   /* supprimer les tokens par défaut */
   /* --*: initial; */
 
+  /* supprimer les tokens de couleur */
   --color-*: initial;
 
   /* Couleurs */
@@ -44,16 +35,21 @@
 
   /* Typo */
   --default-font-family: var(--main-font);
-  --text-md: 1rem;
-  --text-lg: 2rem;
-  --text-xl: 3rem;
+  --text-md: calc(var(--font-size) * 1);
+  --text-lg: calc(var(--font-size) * 2);
+  --text-xl: calc(var(--font-size) * 3);
 
   /* Spacing */
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-4: 1rem;
-  --spacing-6: 1.5rem;
-  --spacing-card: 20rem;
+
+  /* par défaut --spacing :0.25rem */
+  /* on l'adapte à la valeur locale de font-size */
+  --spacing: calc(0.25rem * var(--font-size) / 1rem);
+
+  --spacing-1: var(--spacing);
+  --spacing-2: calc(2 * var(--spacing));
+  --spacing-4: calc(4 * var(--spacing));
+  --spacing-6: calc(6 * var(--spacing));
+  --spacing-card: var(--card-width);
 
   /* Forms (radius, shadow...) */
   --radius-*: initial;

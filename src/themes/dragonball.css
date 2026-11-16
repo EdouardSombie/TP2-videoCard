@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@layer base {
+  .dragonball,
+  [data-theme="dragonball"] {
+    /* Typo */
+    --main-font: "Bangers", "Impact", sans-serif;
+    --font-size: 20px;
+    --letter-spacing: 5%;
+
+    /* Couleurs */
+    --surface: light-dark(oklch(96% 0.02 85), oklch(14.5% 0.03 260));
+    --surface-muted: light-dark(oklch(98% 0.012 85), oklch(20.5% 0.04 260));
+    --text: light-dark(oklch(18% 0.04 260), oklch(97% 0.015 90));
+    --text-muted: light-dark(oklch(32% 0.05 255), oklch(75% 0.03 85));
+    --shadow: light-dark(oklch(25% 0.06 260), oklch(8% 0.04 265));
+
+    /* Formes */
+    --radius: calc(6 * var(--spacing));
+
+    /* Spacing */
+    /* par défaut --spacing :0.25rem */
+    /* on l'adapte à la valeur locale de font-size (possiblement différente de celle de :root) */
+    --spacing: calc(0.25rem * var(--font-size) / 1rem);
+    --card-width: calc(80 * var(--spacing));
+
+    /* application locale de règles en principe globales, pas nécessaire si le thème est mis sur html ou body */
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing);
+  }
+}

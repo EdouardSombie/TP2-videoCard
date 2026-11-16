@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@layer base {
+  .dungeon-dragon,
+  [data-theme="dungeon-dragon"] {
+    /* Typo */
+    --main-font: "Cinzel", "Georgia", serif;
+    --font-size: 18px;
+    --letter-spacing: 2%;
+
+    /* Couleurs - Thème Fantasy Médiéval */
+    --surface: light-dark(oklch(92% 0.04 45), oklch(18% 0.05 40));
+    --surface-muted: light-dark(oklch(88% 0.08 50), oklch(22% 0.08 35));
+    --text: light-dark(oklch(24% 0.06 35), oklch(88% 0.02 50));
+    --text-muted: light-dark(oklch(48% 0.12 50), oklch(68% 0.12 40));
+    --shadow: light-dark(oklch(35% 0.15 35), oklch(12% 0.08 40));
+
+    /* Formes */
+    --radius: calc(3 * var(--spacing));
+
+    /* Spacing */
+    --spacing: calc(0.25rem * var(--font-size) / 1rem);
+    --card-width: calc(90 * var(--spacing));
+
+    /* application locale de règles en principe globales, pas nécessaire si le thème est mis sur html ou body */
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    letter-spacing: var(--letter-spacing);
+  }
+}

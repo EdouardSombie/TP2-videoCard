@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    /* Typo */
+    --main-font: "Inter", sans-serif;
+    --font-size: 16px;
+    --letter-spacing: 0%;
+
+    /* Couleurs */
+    --surface: light-dark(oklch(96% 0 none), oklch(14.5% 0 none));
+    --surface-muted: light-dark(oklch(98% 0 none), oklch(20.5% 0 none));
+    --text: light-dark(oklch(14.5% 0 none), oklch(97% 0 none));
+    --text-muted: light-dark(oklch(20.5% 0 none), oklch(70.8% 0 none));
+    --shadow: light-dark(oklch(14.5% 0 none), oklch(14.5% 0 none));
+
+    /* Formes */
+    --radius: calc(4 * var(--spacing));
+
+    /* Spacing */
+    --spacing: 0.25rem; /* valeur par défaut */
+    --card-width: calc(80 * var(--spacing));
+  }
+}
